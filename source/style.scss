@@ -1,0 +1,105 @@
+@use 'config/cores.scss';
+@use 'config/numeros.scss';
+
+* {
+    margin: numeros.$nmrZero;
+    padding: numeros.$nmrZero;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    background-color: cores.$corBranca;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: numeros.$nmrZero auto;
+}
+
+header {
+    background-color: cores.$corAzul;
+    position: sticky;
+    top: numeros.$nmrZero;
+    left: numeros.$nmrZero;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px numeros.$nmrZero;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-weight: bold;
+    margin-left: 24px;
+}
+
+.menu li a {
+    color: cores.$corBranca;
+    text-decoration: none;
+}
+
+section {
+    padding: 56px numeros.$nmrZero;
+}
+
+.products {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 1%;
+    row-gap: 4%;
+    width: 100%;
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.product-button {
+    display: block;
+    background-color: cores.$corVerde;
+    color: cores.$corBranca;
+    text-align: center;
+    padding: 8px numeros.$nmrZero;
+    border-radius: 8px;
+    margin-top: 8px;
+    text-decoration: none;
+}
+
+.product-button:hover {
+    background-color: cores.$corVerde;
+}
+
+@media screen and (max-width: 1023px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .products {
+        display: block;
+    }
+
+    .product-item  {
+        margin-bottom: 32px;
+    }
+}
